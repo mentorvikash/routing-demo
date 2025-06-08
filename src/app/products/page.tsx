@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-function Products() {
+async function Products() {
   const products = [
     {
       id: 1,
@@ -28,6 +28,12 @@ function Products() {
       name: "Product 6",
     },
   ];
+
+  await new Promise<string>((resolve) => {
+    setTimeout(() => {
+      resolve("product data fetched");
+    }, 3000);
+  });
 
   return (
     <div>

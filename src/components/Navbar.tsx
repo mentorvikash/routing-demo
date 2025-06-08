@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import React, { useState } from "react";
 
 interface NavLink {
   name: string;
@@ -38,11 +39,17 @@ function NavBar() {
   const pathname = usePathname();
   console.log("pathname", pathname);
 
+  const [name, setName] = useState("");
+
   const isActive = (link: NavLink): Boolean => {
     return (
       link.href === pathname ||
       (pathname.startsWith(link.href) && link.href != "/")
     );
+  };
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setName(event.target.value);
   };
   return (
     <>
@@ -56,6 +63,9 @@ function NavBar() {
             {link.name}
           </Link>
         ))}
+        <div className="border-2">
+          <input value={name} type="text" onChange={handleChange} />
+        </div>
       </div>
     </>
   );

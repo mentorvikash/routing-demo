@@ -24,6 +24,12 @@ async function DetialPage({
     notFound();
   }
   console.log("productId", productId);
+
+  await new Promise<string>((resolve) => {
+    setTimeout(() => {
+      resolve("product data fetched");
+    }, 3000);
+  });
   return (
     <div>
       <h1>this is our detials page of product {productId}</h1>
