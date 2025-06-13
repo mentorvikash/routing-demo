@@ -5,7 +5,7 @@ const generateError = () => {
 };
 
 function Revenue() {
-  generateError();
+  // generateError();
 
   return (
     <div>

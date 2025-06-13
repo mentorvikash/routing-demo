@@ -3,7 +3,7 @@ import React from "react";
 
 function Notification() {
   return (
-    <div>
+    <div className="flex flex-col gap-2">
       <h1>Notification Page</h1>
       <Link href="/complex-dashboard/archived">Archived Notification</Link>
     </div>
