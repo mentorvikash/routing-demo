@@ -1,5 +1,6 @@
 import React from "react";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 
 function generateRandomNumber(n: number): number {
   const num = Math.floor(Math.random() * n);
@@ -43,7 +44,12 @@ async function DetialPage({
 
   return (
     <div>
-      <h1>this is our detials page of product {productId}</h1>
+      <div>
+        <h1>this is our detials page of product {productId}</h1>
+      </div>
+      <button className="p-2 border-1 border-amber-100 bg-black text-teal-100">
+        <Link href={`${productId}/review`}>Product Review</Link>
+      </button>
     </div>
   );
 }

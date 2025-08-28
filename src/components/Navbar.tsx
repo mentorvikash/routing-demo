@@ -31,7 +31,7 @@ const navLink: NavLink[] = [
   },
   {
     name: "Products",
-    href: "/products",
+    href: "/product",
   },
 ];
 
@@ -41,7 +41,7 @@ function NavBar() {
 
   const [name, setName] = useState("");
 
-  const isActive = (link: NavLink): Boolean => {
+  const isActive = (link: NavLink): boolean => {
     return (
       link.href === pathname ||
       (pathname.startsWith(link.href) && link.href != "/")

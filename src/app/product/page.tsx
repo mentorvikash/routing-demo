@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { cusotomError } from "@/utils/generateError";
 
 async function Products() {
   const products = [
@@ -35,17 +36,19 @@ async function Products() {
     }, 3000);
   });
 
+  cusotomError("this error is at product id level");
+
   return (
     <div>
       <h1>All Products</h1>
       <ol>
         {products.map((product, index) => (
           <li key={index}>
-            <Link href={`/products/${product.id}`}>{product.name}</Link>
+            <Link href={`/product/${product.id}`}>{product.name}</Link>
           </li>
         ))}
         <li>
-          <Link href={`/products/${100}`} replace>
+          <Link href={`/product/${100}`} replace>
             Product 100
           </Link>
         </li>
